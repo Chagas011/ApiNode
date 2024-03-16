@@ -1,6 +1,6 @@
 import Sequelize, { Model } from 'sequelize';
 
-const url = 'http://localhost:3000';
+const url = 'http://192.168.15.124';
 export default class Foto extends Model {
   static init(sequelize) {
     super.init({
