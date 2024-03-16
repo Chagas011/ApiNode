@@ -1,6 +1,6 @@
 import Sequelize, { Model } from 'sequelize';
+import appConfig from '../config/appConfig';
 
-const url = 'http://192.168.15.124';
 export default class Foto extends Model {
   static init(sequelize) {
     super.init({
@@ -25,7 +25,7 @@ export default class Foto extends Model {
       url: {
         type: Sequelize.VIRTUAL,
         get() {
-          return `${url}/images/${this.getDataValue('filename')}`;
+          return `${appConfig.url}/images/${this.getDataValue('filename')}`;
         },
       },
     }, {

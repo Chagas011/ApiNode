@@ -1,6 +1,6 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _sequelize = require('sequelize'); var _sequelize2 = _interopRequireDefault(_sequelize);
+var _appConfig = require('../config/appConfig'); var _appConfig2 = _interopRequireDefault(_appConfig);
 
-const url = '192.168.15.124';
  class Foto extends _sequelize.Model {
   static init(sequelize) {
     super.init({
@@ -25,7 +25,7 @@ const url = '192.168.15.124';
       url: {
         type: _sequelize2.default.VIRTUAL,
         get() {
-          return `${url}/images/${this.getDataValue('filename')}`;
+          return `${_appConfig2.default.url}/images/${this.getDataValue('filename')}`;
         },
       },
     }, {
